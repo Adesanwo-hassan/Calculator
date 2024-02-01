@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content=" This calculator is a demonstration of my capability" />
+    <meta name="author" content="Adesanwo Hassan Smith" />
+    <title>Simple calculator and converter</title>
+    <link rel="stylesheet" href="index.css" media="all" />
+</head>
+<body>
+    <div class="overall">
+        <!-- calculator start here-->
+        <form class="container" id="myform">
+            <input type="text" class="display" id="disp" name="answer" />
+            <div class="keys" id="keys">
+                <input type="button" value="Del" class="clear" onclick="delNum()">
+                <input type="button" value="&#8660;" class="converter" onclick="showconverter()" title="Click to go to converter" />
+                <input type="button" class="plus" value="+" onclick="myform.answer.value += '+'">
+                <input type="button" value="9" onclick="myform.answer.value += '9'" />
+                <input type="button" value="8" onclick="myform.answer.value += '8'" />
+                <input type="button" value="7" onclick="myform.answer.value += '7'" />
+                <input type="button" value="-" onclick="myform.answer.value += '-'" />
+                <input type="button" value="6" class="five" onclick="myform.answer.value += '6'">
+                <input type="button" value="5" onclick="myform.answer.value += '5'" />
+                <input type="button" value="4" onclick="myform.answer.value += '4'" />
+                <input type="button" value="*" onclick="myform.answer.value += '*'" />
+                <input type="button" value="3" onclick="myform.answer.value += '3'" />
+                <input type="button" value="2" onclick="myform.answer.value += '2'" />
+                <input type="button" value="1" onclick="myform.answer.value += '1'" />
+                <input type="button" value="&div;" onclick="myform.answer.value += '/'" />
+                <input type="button" value="0" onclick="myform.answer.value += '0'" />
+                <input type="button" value="." onclick="myform.answer.value += '.'" />
+                <input type="button" value="=" onclick="myform.answer.value = eval(myform.answer.value)" />
+                <input type="button" value="Erase" onclick="myform.answer.value = ' '" />
+                <div class="desc">Click &#8660; to go to converter</div>
+            </div>
+        </form>
+       <!-- calculator ends here-->
+
+        <!--converter start here-->
+        <div class="converter-sect" id="converter">
+            <fieldset>
+                <legend>kilometer to meter and vice versa</legend>
+                <div>
+                    KM <br />
+                    <input type="number" id="km" oninput="convertkm()" />
+                </div>
+                <div>
+                    M <br />
+                    <input type="number" id="m" oninput="convertm()" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Kilogram to gram and vice versa</legend>
+                <div>
+                    KG <br />
+                    <input type="number" id="kg" oninput="convertkg()" />
+                </div>
+                <div>
+                    G <br />
+                    <input type="number" id="g" oninput="convertg()" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Celsius to farenheit and vice versa</legend>
+                <div>
+                    <sup>&theta;</sup>C <br />
+                    <input type="number" id="celsius" oninput="convertcelsius()" />
+                </div>
+                <div>
+                    <sup>&theta;</sup>F <br />
+                    <input type="number" id="farenheit" oninput="convertfarenheit()" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Celsius to kelvin and vice versa</legend>
+                <div>
+                    <sup>&theta;</sup>C <br />
+                    <input type="number" id="celsiusinkelvin" oninput="convertcelsiustokelvin()" />
+                </div>
+                <div>
+                    <sup>&theta;</sup>K <br />
+                    <input type="number" id="kelvin" oninput="convertkelvintocelsius()" />
+                </div>
+            </fieldset>
+            <div class="last-sect"> <button onclick="showcalculator()">Go to calculator</button></div>
+        </div>
+        <!-- Converter stops here-->
+    </div>
+    <footer style="text-align:center">Developed by <a href="#">Hassan</a></footer>
+    <script src="index.js"></script>
+    <script src="converter.js"></script>
+</body>
+</html>
